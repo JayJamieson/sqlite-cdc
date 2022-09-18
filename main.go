@@ -1,9 +1,11 @@
 package main
 
-import "log"
+import (
+	"log"
+)
 
 func main() {
-	cdc, err := NewSQLiteCDC("./test.db")
+	cdc, err := NewSQLiteCDC("./data/test.db")
 
 	if err != nil {
 		log.Fatal(err)
