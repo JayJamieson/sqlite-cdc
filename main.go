@@ -37,8 +37,11 @@ func main() {
 		}
 	}()
 
+	go cdc.Watch()
+
 	<-termChan
 
+	close(cdc.Events)
 	err = cdc.RemoveCDC()
 
 	if err != nil {
